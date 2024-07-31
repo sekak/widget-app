@@ -1,17 +1,42 @@
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { motion } from 'framer-motion'
-import { variantsLeft, variantsRight } from "../../motion"
+import { variantsLeft, variantsRight, variantsUl, variantsWidget } from "../../motion"
 import Card from "../Card"
 import InfoUser from "./InfoUser"
+import { CreateContext } from "../../context/Context"
+import { FetchData } from "../../Data/FetchData"
 
 
+type DATA = {
+  id: number,
+  name: string,
+}
 const Widget = () => {
   const [change, setChange] = useState<"Services" | "Packages">("Services")
+  const { open, setOpen } = useContext(CreateContext)
+  const [error, setError] = useState<boolean>(false)
+  const [data, setData] = useState<DATA>()
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await FetchData("https://dummyapi.online/api/users")
+      if (data.error) {
+        setError(true)
+      }
+      const randomNumber = Math.floor(Math.random() * 30)
+      console.log(randomNumber)
+      setData(data.data[randomNumber])
+    }
+    fetchData()
+  }, [])
+  console.log(data)
+
+
   return (
-    <div className='navbar fixed sm:w-[400px] h-[80%] sm:bottom-[110px] sm:right-[50px] w-screen bottom-0 transition-all rounded-[20px] overflow-hidden z-50'>
+    <motion.div variants={variantsWidget} animate={open ? "open" : "closed"} className='navbar fixed sm:w-[400px] h-[80%] sm:bottom-[110px] sm:right-[50px] w-screen bottom-0 rounded-[20px] overflow-hidden z-50'>
       <section className="w-full h-[6%] flexCenterCenter relative borderWd">
-        <span className="regular-16-karla-400">TestName</span>
-        <div className="w-[20px] h-[20px] rounded-full bg-gray-300 absolute right-6  flexColCenterCenter">
+        <span className="regular-16-karla-400">Overzicht</span>
+        <div className="w-[20px] h-[20px] rounded-full bg-gray-300 absolute right-6  flexColCenterCenter cursor-pointer" onClick={() => setOpen(!open)}>
           <div className="w-[10px] h-[2px] bg-gray-600 origin-left rotate-45 -translate-y-[2.5px] translate-x-[1px]"></div>
           <div className="w-[10px] h-[2px] bg-gray-600 origin-left -rotate-45 translate-y-[2.5px] translate-x-[1px]"></div>
         </div>
@@ -30,12 +55,12 @@ const Widget = () => {
         </div>
         <div className="w-full h-[75%] my-10 gap-4 flexCol overflow-auto">
           {/* cards */}
-          {Array(50).fill(1).map((_,index)=>(
-            <Card key={index} />
+          {Array(50).fill(1).map((_, index) => (
+            <Card key={index} data={data} />
           ))}
         </div>
       </section>
-    </div>
+    </motion.div>
   )
 }
 

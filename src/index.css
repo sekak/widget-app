@@ -5,6 +5,7 @@
 
 body {
     background-color: #f3f4ec;
+    overflow-x: hidden;
 }
 
 * {
@@ -74,7 +75,7 @@ body {
 
 @layer components {
     .padding-container {
-        @apply px-10 lg:px-8 xl:px-6 transition-all;
+        @apply px-10 lg:px-8 xl:px-6;
     }
 
     .regular-16-belleza {

@@ -1,12 +1,21 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { cardVariants } from '../motion'
 
-const Card = () => {
+type CardProps = {
+    data: {} | any | null
+}
+const Card = ({ data }: CardProps) => {
     return (
-        <div>
+
+        <motion.div variants={cardVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}>
             <div className="px-3 py-3 flex relative rounded-lg border border-gray-300 m-1">
                 <div className="flexCenter gap-3">
                     <img src="https://t4.ftcdn.net/jpg/08/04/35/67/360_F_804356715_mpkH5P704pCe6MJ5tAGvjymNt4PFLPze.jpg" alt="" className="w-[40%] rounded-lg bg-cover bg-center" />
-                    <div className="flexCol w-[40%] gap-[1px]">
+                    <div className="flexCol w-[50%] gap-[1px]">
                         <span className="regular-14-karla font-bold">Kenninsamking</span>
                         <p className="text-[12px] text-gray-500 font-normal text-ellipsis pWidCard w-full overflow-hidden">Vesdrv of eeming adivgerstadivger stadivgerst </p>
                     </div>
@@ -22,7 +31,8 @@ const Card = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
+
     )
 }
 

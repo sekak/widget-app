@@ -7,7 +7,7 @@ type initialType = {
 
 const INITIA_STATE: initialType = {
     open: false,
-    setOpen: ()=> ''
+    setOpen: ()=> {}
 }
 
  const CreateContext = createContext<initialType>(INITIA_STATE)

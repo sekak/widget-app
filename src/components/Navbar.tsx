@@ -2,7 +2,7 @@ import MenuButton from './MenuButton'
 
 
 const Navbar = () => {
-
+ 
   return (
     <nav className='w-screen h-[55px] top-[15px] padding-container z-20 fixed'>
       <div className='flexCenterBetween navMoves px-5 py-5 rounded-[15px] mx-auto max-w-[1200px] w- h-full  relative'>

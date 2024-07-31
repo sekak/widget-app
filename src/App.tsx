@@ -1,16 +1,13 @@
-import { useContext } from 'react';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Widget from './components/Widget/Widget';
-import { ContextProvide, CreateContext } from './context/Context';
+import { ContextProvide } from './context/Context';
 
 function App() {
-  const {open} = useContext(CreateContext)
-  console.log(open)
+ 
   return (
-    <div className="">
+    <div>
       <ContextProvide >
-
         <Navbar />
         <Hero />
         <Widget />
