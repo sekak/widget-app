@@ -2,7 +2,7 @@ import ButtonWidget from './Widget/ButtonWidget'
 
 const Hero = () => {
     return (
-        <div className='w-screen relative z-[-1]'>
+        <div className='w-screen relative z-[1]'>
             <div className='max-w-[1220px] mx-auto padding-container mt-[150px]'>
                 <div className='flexCol md:flex-row  w-full gap-10'>
                     <div className='flexCol md:flex-1  md:gap-10 gap-4 Belleza transition-all'>
