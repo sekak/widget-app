@@ -23,3 +23,17 @@ export type Variants = {
     open: Variant;
     closed: Variant;
 };
+
+
+type VariantLR ={
+    x: number | string,
+    transition?:{
+        stiffness:number,
+        damping: number
+    }
+}
+
+export type VariantLeftRight ={
+    moveTo:VariantLR
+    moveFrom:VariantLR
+}

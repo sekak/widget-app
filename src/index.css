@@ -19,8 +19,8 @@ body {
     font-family: 'Belleza', sans-serif;
 }
 
-.borderBlack {
-    border-bottom: 1px solid #fff;
+.borderBlack{
+    border-bottom: 1px solid transparent;
 }
 
 .borderBlack:hover {
@@ -37,15 +37,39 @@ body {
     -webkit-backdrop-filter: blur(19px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
-.widget {
+
+.navMoves{
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(19px);
     -webkit-backdrop-filter: blur(19px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
+ 
 .borderWd{
-    border-bottom: 1px solid gray;
+    border-bottom: .1px solid gray;
+}
+.borderBlackWd{
+    border-bottom: 2px solid black;
+}
+.borderWhite
+{
+    border-bottom: 2px solid rgb(226, 226, 226);
+}
+
+.pWid{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; 
+}
+.pWidCard{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+}
+
+.roundedWg{
+    border-radius: 10px 0px 10px  ;
 }
 
 @layer components {
@@ -60,4 +84,46 @@ body {
     .regular-14-karla {
         @apply text-[14px] Karla font-[300];
     }
+    .regular-16-karla-400 {
+        @apply text-[16px] Karla font-[400];
+    }
+    .regular-18-karla-500 {
+        @apply text-[18px] Karla font-[500];
+    }
+
+    .flexCol{
+        @apply flex flex-col  
+    }
+    .flexCenter{
+        @apply flex items-center
+    }
+    .flexCenterCenter{
+        @apply  flex items-center justify-center
+    }
+    .flexCenterBetween{
+        @apply flex items-center justify-between
+    }
+    .flexColCenterCenter{
+        @apply  flexCenterCenter flex-col 
+    }
+    .navWd{
+        @apply flex-1 flexCenterCenter  p-2 regular-16-karla-400 cursor-pointer
+    }
 }
+
+
+::-webkit-scrollbar{
+ 
+    width: 6px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(91, 91, 91);
+    border-radius: 10px;
+ 
+}
+
+::-webkit-scrollbar-corner {
+    background-color: rgb(236, 236, 236); /* Background color of the scrollbar corner */
+  }
