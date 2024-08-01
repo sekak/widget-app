@@ -34,11 +34,11 @@ const Widget = () => {
 
 
   return (
-    <motion.div variants={variantsWidget} animate={open ? "open" : "closed"} className='widget h-full'>
+    <motion.div variants={variantsWidget} animate={!open ? "open" : "closed"} className='widget h-full'>
       {!error ? <>
         <section className="w-full h-[6%] flexCenterCenter relative borderWd">
           <span className="regular-16-karla-400">Overzicht</span>
-          <div className="w-[20px] h-[20px] rounded-full bg-gray-300 absolute right-6  flexColCenterCenter cursor-pointer" onClick={() => setOpen(!open)}>
+          <div className="w-[20px] h-[20px] rounded-full bg-gray-300 absolute right-6  flexColCenterCenter cursor-pointer" >
             <div className="w-[10px] h-[2px] bg-gray-600 origin-left rotate-45 -translate-y-[2.5px] translate-x-[1px]"></div>
             <div className="w-[10px] h-[2px] bg-gray-600 origin-left -rotate-45 translate-y-[2.5px] translate-x-[1px]"></div>
           </div>
