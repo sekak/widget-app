@@ -66,7 +66,7 @@ export const cardVariants = {
 export const variantsWidget = {
     open: {
       display: 'block',
-      height: '80%',
+      height: '100%',
       opacity: 1,
        transition: {
         duration: 0.6,

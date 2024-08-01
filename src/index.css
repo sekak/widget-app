@@ -85,7 +85,7 @@ body {
         @apply flex-1 flexCenterCenter  p-2 regular-16-karla-400 cursor-pointer
     }
     .widget{
-      @apply   navbar fixed sm:w-[400px] h-[80%] sm:bottom-[110px] sm:right-[50px] w-screen bottom-0 rounded-[20px] overflow-hidden z-50
+      @apply   navbar fixed sm:w-[400px] h-[100%]  sm:right-[50px] w-full bottom-0 rounded-[20px] overflow-hidden z-50
     }
 }
 

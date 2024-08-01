@@ -34,7 +34,7 @@ const Widget = () => {
 
 
   return (
-    <motion.div variants={variantsWidget} animate={open ? "open" : "closed"} className='widget'>
+    <motion.div variants={variantsWidget} animate={open ? "open" : "closed"} className='widget h-full'>
       {!error ? <>
         <section className="w-full h-[6%] flexCenterCenter relative borderWd">
           <span className="regular-16-karla-400">Overzicht</span>

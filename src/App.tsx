@@ -6,9 +6,9 @@ import { ContextProvide } from './context/Context';
 function App() {
  
   return (
-    <div>
+    <div className='w-screen h-screen'>
       <ContextProvide >
-        <ButtonWidget />
+        {/* <ButtonWidget /> */}
         <Widget />
       </ContextProvide>
     </div>
