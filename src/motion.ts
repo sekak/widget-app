@@ -81,3 +81,18 @@ export const variantsWidget = {
       }
     }
   }
+
+export const variantsButton = {
+    open: {
+        rotate: 360,
+        transition:{
+            duration: 1
+        }
+    },
+    closed: {
+        rotate: 0,
+        transition:{
+            duration: 1
+        }
+    }
+}

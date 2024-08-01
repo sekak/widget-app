@@ -16,20 +16,6 @@ body {
     font-family: 'Karla', sans-serif;
 }
 
-.Belleza {
-    font-family: 'Belleza', sans-serif;
-}
-
-.borderBlack{
-    border-bottom: 1px solid transparent;
-}
-
-.borderBlack:hover {
-    border-bottom: 1px solid black;
-    cursor: pointer;
-    width: max-content;
-}
-
 .navbar {
     background-color: white;
     border-radius: 16px;
@@ -38,15 +24,6 @@ body {
     -webkit-backdrop-filter: blur(19px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
-.navMoves{
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(19px);
-    -webkit-backdrop-filter: blur(19px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
- 
 .borderWd{
     border-bottom: .1px solid gray;
 }
@@ -57,7 +34,6 @@ body {
 {
     border-bottom: 2px solid rgb(226, 226, 226);
 }
-
 .pWid{
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -69,19 +45,17 @@ body {
     -webkit-line-clamp: 2; 
 }
 
+.pTitleCard{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; 
+}
+
 .roundedWg{
     border-radius: 10px 0px 10px  ;
 }
 
 @layer components {
-    .padding-container {
-        @apply px-10 lg:px-8 xl:px-6;
-    }
-
-    .regular-16-belleza {
-        @apply text-[16px] text-gray-gray Belleza;
-    }
-
     .regular-14-karla {
         @apply text-[14px] Karla font-[300];
     }
@@ -110,6 +84,9 @@ body {
     .navWd{
         @apply flex-1 flexCenterCenter  p-2 regular-16-karla-400 cursor-pointer
     }
+    .widget{
+      @apply   navbar fixed sm:w-[400px] h-[80%] sm:bottom-[110px] sm:right-[50px] w-screen bottom-0 rounded-[20px] overflow-hidden z-50
+    }
 }
 
 
@@ -126,5 +103,5 @@ body {
 }
 
 ::-webkit-scrollbar-corner {
-    background-color: rgb(236, 236, 236); /* Background color of the scrollbar corner */
+    background-color: rgb(236, 236, 236); 
   }
