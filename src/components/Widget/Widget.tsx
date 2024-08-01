@@ -19,21 +19,18 @@ const Widget = () => {
       const randomNumber: number = Math.floor(Math.random() * 30)
       const data = await FetchData("https://dummyapi.online/api/users")
       const products = await FetchData("https://dummyapi.online/api/products")
-      console.log(data.error , products.error)
-      if(data.error || products.error)
-      {
+      if (data.error || products.error) {
         setError(true)
         return
       }
-      else 
-      {
+      else {
         setData(data?.data[randomNumber])
         setProducts(products.data)
       }
     }
     DataUser()
   }, [])
-  console.log(error)
+
 
 
   return (
