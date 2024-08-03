@@ -56,11 +56,10 @@ export type dataUser = {
 
 
 export type dataProducts = {
-    id: number | undefined;
-    name: string | undefined;
-    basePrice?: number;
-    brand?: string;
-    description?:string;
-    featuredImage?:string
+    id: number;
+    name:string;
+    description: string;
+    imageURL: string;
+    price:string;
 }
  

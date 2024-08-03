@@ -10,17 +10,18 @@ const Card: FC<dataProducts | any> = (data) => {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 1 }}
+            className='cursor-pointer '
         >
             <div className="px-3 py-3 flex relative rounded-lg border border-gray-300 m-1">
-                <div className="flexCenter gap-3">
-                    <img src={data.data.featuredImage} alt="" className="w-[30%] rounded-lg bg-cover bg-center" />
+                <div className="flexCenter gap-2">
+                    <img src={data.data.imageURL} alt="" className="w-[100px] h-[65px] rounded-lg bg-cover bg-center object-cover" />
                     <div className="flexCol w-[50%] gap-[1px]">
                         <span className="regular-14-karla font-bold pTitleCard text-ellipsis overflow-hidden">{data.data.name}</span>
                         <p className="text-[12px] text-gray-500 font-normal text-ellipsis pWidCard w-full overflow-hidden">{data.data.description}</p>
                     </div>
                 </div>
                 <div className="flex items-start justify-end w-full">
-                    <span className='text-[12px] text-gray-500'>${data.data.basePrice}</span>
+                    <span className='text-[12px] text-gray-500'>{data.data.price}</span>
                 </div>
                 <div className="absolute -right-[0px] -bottom-[0px]">
                     <div className="w-[40px] h-[40px] roundedWg flexCenterCenter" >

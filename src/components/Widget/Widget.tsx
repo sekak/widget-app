@@ -5,7 +5,7 @@ import Card from "./Card"
 import InfoUser from "./InfoUser"
 import { FetchData } from "../../Data/FetchData"
 import { dataProducts, dataUser } from "../../types"
-import { personalImages } from "../../data"
+import { Packages, personalImages, Services } from "../../data"
 
 const randomImage: number = Math.floor(Math.random() * 6);
 
@@ -13,55 +13,57 @@ const Widget = () => {
   const [change, setChange] = useState<"Services" | "Packages">("Services")
   const [error, setError] = useState<boolean>(false)
   const [data, setData] = useState<dataUser | null>(null)
-  const [products, setProducts] = useState<dataProducts[] | null>(null)
+  const [currentData, setCurrentData] = useState<dataProducts[] | null >(Services)
+
 
 
   useEffect(() => {
     const DataUser = async () => {
       let random: number = Math.floor(Math.random() * 30)
       const data = await FetchData("https://dummyapi.online/api/users")
-      const products = await FetchData("https://dummyapi.online/api/products")
-      if (data.error || products.error) {
+      if (data.error) {
         setError(true)
         return
       }
-      else {
+      else
         setData(data?.data[random])
-        setProducts(products.data)
-      }
     }
     DataUser()
   }, [])
 
+  const handleClick = (type: string) => {
+    if(type === "Services")
+    {
+      setChange("Services")
+      setCurrentData(Services)
+    }else {
+      setChange("Packages")
+      setCurrentData(Packages)
+    }
+  };
 
   return (
     <div className='h-full sm:w-[400px] w-[100%] fixed bottom-0 right-0 rounded-[25px] overflow-hidden z-50 flex flex-col shdow-widget'>
-      <section className="min-h-[50px] max-h-[50px] border-b-[1px]  border-gray-500 w-full">
-        <span className="w-full h-full flex items-center justify-center text-[16px] text-gray-600 font-[300] Karla">Overview</span>
+      <section className="min-h-[50px] max-h-[50px] border-b-[2px]  border-gray-300 w-full">
+        <span className="w-full h-full flex items-center justify-center text-[16px] text-gray-600 font-[400] Karla">Overview</span>
       </section>
-      <div className="w-full h-[calc(100%-50px)] flex flex-col p-6">
-        <section className="flex flex-col gap-8 mt-8">
-          <div className="w-full flex items-center gap-2">
-            <img src={personalImages[0]} alt="img" className="w-[80px] h-[80px] rounded-full object-cover" />
-            <div className="flex flex-col">
-              <span className="regular-18-karla-500">Ahmed sekak</span>
-              <span className="regular-14-karla text-gray-500">this a little description</span>
-            </div>
-          </div>
-          <p className="pWid text-gray-400  regular-16-karla-400 overflow-hidden text-ellipsis "> erferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferf</p>
-          <img src="./add-icon.png" alt="img1" className="w-[25px] -mt-[10px]" />
+      <div className="w-full flex flex-col p-6 h-full">
+        <section className="flex  flex-col  gap-4 sm:mt-4">
+          {/* info user */}
+          {error ? <div>Somethig wrong!</div> : <InfoUser data={data}/>}
         </section>
-        <section className="relative mt-6">
-          <div className="flex flex-col gap-6 w-full md:h-[70%] sm:h-[50%] h-[30%]">
+        <section className="relative mt-6  h-full">
+          <div className="flex flex-col gap-6 w-full h-full">
             <div className="flexCenterBetween w-full transition-all duration-1000 overflow-hidden">
-              <div className='navWd ' onClick={() => setChange("Services")}>Services</div>
-              <div className='navWd' onClick={() => setChange("Packages")}>Packages</div>
-              <div className='navWd borderWhite absolute top-[41px] w-full p-0'></div>
-              <motion.div variants={change === "Services" ? variantsLeft : variantsRight} initial="moveFrom" animate="moveTo" className={`navWd borderBlackWd absolute top-[25px] w-[50%]`}></motion.div>
+              <div className='navWd' onClick={() => handleClick("Services")}>Services</div>
+              <div className='navWd' onClick={() => handleClick("Packages")}>Packages</div>
+              <div className='navWd borderWhite absolute top-[36px] w-full p-0'></div>
+              <motion.div variants={change === "Services" ? variantsLeft : variantsRight} initial="moveFrom" animate="moveTo" className={`navWd borderBlackWd absolute top-[20px] w-[50%] `}></motion.div>
             </div>
-            <div className="overflow-auto w-full  h-[50%]">
-              {products?.map((product, i) => (
-                <Card key={i} data={product} />
+            <div className="overflow-auto flex flex-col">
+              {/* card */}
+              {currentData?.map((item, i) => (
+                <Card key={i} data={item} />
               ))}
             </div>
           </div>
@@ -72,32 +74,3 @@ const Widget = () => {
 }
 
 export default Widget
-
-
-// {!error ? <>
-//   <section className="w-full h-[6%] flexCenterCenter relative borderWd">
-//     <span className="regular-16-karla-400">Overview</span>
-//   </section>
-//   {/* info user */}
-//   <section className="relative max-w-[90%] mx-auto flexCol mt-12 w-full h-[30%]">
-//     <InfoUser name={data?.name} id={data?.id} email={data?.email} image={personalImages[randomImage]} />
-//   </section>
-//   {/* services */}
-//   <section className="relative flexCol -mt-2 max-w-[90%] mx-auto w-full h-[64%]">
-//     <div className="flexCenterBetween w-full transition-all duration-1000 overflow-hidden">
-//       <div className='navWd ' onClick={() => setChange("Services")}>Services</div>
-//       <div className='navWd' onClick={() => setChange("Packages")}>Packages</div>
-//       <div className='navWd borderWhite absolute top-[41px] w-full p-0'></div>
-//       <motion.div variants={change === "Services" ? variantsLeft : variantsRight} initial="moveFrom" animate="moveTo" className={`navWd borderBlackWd absolute top-[25px] w-[50%]`}></motion.div>
-//     </div>
-//     <div className="w-full h-[75%] my-10 gap-4 flexCol overflow-auto">
-//       {/* cards */}
-//       {products?.map((product, i) => (
-//         <Card key={i} data={product} />
-//       ))}
-//     </div>
-//   </section>
-// </>
-//   :
-//   <span className='text-red-400 text-[30px] flex mt-8 justify-center'>Something wrong!</span>
-// }
