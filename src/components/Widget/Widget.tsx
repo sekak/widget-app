@@ -5,7 +5,7 @@ import Card from "./Card"
 import InfoUser from "./InfoUser"
 import { FetchData } from "../../Data/FetchData"
 import { dataProducts, dataUser } from "../../types"
-import { Packages, personalImages, Services } from "../../data"
+import { Packages, Services, personalImages } from "../../data"
 
 const randomImage: number = Math.floor(Math.random() * 6);
 
@@ -50,7 +50,7 @@ const Widget = () => {
       <div className="w-full flex flex-col p-6 h-full">
         <section className="flex  flex-col  gap-4 sm:mt-4">
           {/* info user */}
-          {error ? <div>Somethig wrong!</div> : <InfoUser data={data}/>}
+          {error ? <div>Somethig wrong!</div> : <InfoUser data={data} image={personalImages[randomImage]}/>}
         </section>
         <section className="relative mt-6  h-full">
           <div className="flex flex-col gap-6 w-full h-full">
