@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { dataUser } from "../../types"
 
 const InfoUser: FC<dataUser> = (data) => {
