@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import { motion } from 'framer-motion'
+import { variantsLeft, variantsRight } from "../../motion"
 import Card from "./Card"
 import InfoUser from "./InfoUser"
 import { FetchData } from "../../Data/FetchData"
@@ -30,7 +32,7 @@ const Widget = () => {
 
 
   return (
-    <div className='widget h-full'>
+    <div  className='widget h-full'>
       {!error ? <>
         <section className="w-full h-[6%] flexCenterCenter relative borderWd">
           <span className="regular-16-karla-400">Overzicht</span>
@@ -45,7 +47,7 @@ const Widget = () => {
             <div className='navWd ' onClick={() => setChange("Services")}>Services</div>
             <div className='navWd' onClick={() => setChange("Packages")}>Packages</div>
             <div className='navWd borderWhite absolute top-[41px] w-full p-0'></div>
-            <div className={`navWd borderBlackWd absolute top-[25px] w-[50%]`}></div>
+            <motion.div variants={change === "Services" ? variantsLeft : variantsRight} initial="moveFrom" animate="moveTo" className={`navWd borderBlackWd absolute top-[25px] w-[50%]`}></motion.div>
           </div>
           <div className="w-full h-[75%] my-10 gap-4 flexCol overflow-auto">
             {/* cards */}
