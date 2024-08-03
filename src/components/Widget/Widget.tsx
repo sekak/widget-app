@@ -5,16 +5,20 @@ import Card from "./Card"
 import InfoUser from "./InfoUser"
 import { FetchData } from "../../Data/FetchData"
 import { dataProducts, dataUser } from "../../types"
+import { personalImages } from "../../data"
+
+const randomImage:number = Math.floor(Math.random() * 6);
 
 const Widget = () => {
   const [change, setChange] = useState<"Services" | "Packages">("Services")
   const [error, setError] = useState<boolean>(false)
   const [data, setData] = useState<dataUser | null>(null)
   const [products, setProducts] = useState<dataProducts[] | null>(null)
-
+ 
+ 
   useEffect(() => {
     const DataUser = async () => {
-      const randomNumber: number = Math.floor(Math.random() * 30)
+      let random:number = Math.floor(Math.random() * 30)
       const data = await FetchData("https://dummyapi.online/api/users")
       const products = await FetchData("https://dummyapi.online/api/products")
       if (data.error || products.error) {
@@ -22,14 +26,14 @@ const Widget = () => {
         return
       }
       else {
-        setData(data?.data[randomNumber])
+        setData(data?.data[random])
         setProducts(products.data)
       }
     }
     DataUser()
   }, [])
-
-
+ 
+ 
 
   return (
     <div  className='widget h-full'>
@@ -39,7 +43,7 @@ const Widget = () => {
         </section>
         {/* info user */}
         <section className="relative max-w-[90%] mx-auto flexCol mt-12 w-full h-[30%]">
-          <InfoUser name={data?.name} id={data?.id} email={data?.email} />
+          <InfoUser name={data?.name} id={data?.id} email={data?.email} image={personalImages[randomImage]} />
         </section>
         {/* services */}
         <section className="relative flexCol -mt-2 max-w-[90%] mx-auto w-full h-[64%]">

@@ -1,14 +1,11 @@
 import { FC, useEffect } from "react";
 import { dataUser } from "../../types"
-import { personalImages } from "../../data";
 
-const InfoUser: FC<dataUser>= (data) => {
-    let i:number = Math.floor(Math.random() * 6)
-
+const InfoUser: FC<dataUser> = (data) => {
     return (
         <>
             <div className="flex items-center gap-3">
-                <img src={personalImages[i]} alt="img-random" className="w-[85px] h-[85px] rounded-full bg-center bg-cover object-cover"/>
+                <img src={data.image} alt="img-random" className="w-[85px] h-[85px] rounded-full bg-center bg-cover object-cover" />
                 <div className="flexCol">
                     <span className="regular-18-karla-500">{data?.name}</span>
                     <span className="regular-14-karla text-gray-500">{data.email}</span>

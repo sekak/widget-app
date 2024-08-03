@@ -1,9 +1,6 @@
-import { VariantLeftRight, Variants, variantsMenu } from "./types"
+import { VariantLeftRight } from "./types"
 
-
- 
-
-export const variantsLeft:VariantLeftRight = {
+export const variantsLeft: VariantLeftRight = {
     moveFrom: {
         x: '-100px'
     },
@@ -16,7 +13,7 @@ export const variantsLeft:VariantLeftRight = {
     }
 }
 
-export const variantsRight:VariantLeftRight = {
+export const variantsRight: VariantLeftRight = {
     moveFrom: {
         x: 0
     },
@@ -45,33 +42,33 @@ export const cardVariants = {
 
 export const variantsWidget = {
     open: {
-      display: 'block',
-      height: '100%',
-      opacity: 1,
-       transition: {
-        duration: 0.6,
-      }
+        display: 'block',
+        height: '100%',
+        opacity: 1,
+        transition: {
+            duration: 0.6,
+        }
     },
     closed: {
-      display: 'none',
-      height: '0',
-      opacity: 0,
-       transition: {
-        duration: 0.6,
-      }
+        display: 'none',
+        height: '0',
+        opacity: 0,
+        transition: {
+            duration: 0.6,
+        }
     }
-  }
+}
 
 export const variantsButton = {
     open: {
         rotate: 360,
-        transition:{
+        transition: {
             duration: 1
         }
     },
     closed: {
         rotate: 0,
-        transition:{
+        transition: {
             duration: 1
         }
     }

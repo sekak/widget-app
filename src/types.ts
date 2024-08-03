@@ -44,6 +44,7 @@ export type dataUser = {
     name: string | undefined;
     email?: string;
     username?: string;
+    image:string,
     address?: {
         city?:string
         state?:string
