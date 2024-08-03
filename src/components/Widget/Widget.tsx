@@ -34,14 +34,13 @@ const Widget = () => {
   }, [])
 
 
-
   return (
     <div className='h-full sm:w-[400px] w-[100%] fixed bottom-0 right-0 rounded-[25px] overflow-hidden z-50 flex flex-col shdow-widget'>
-      <section className="min-h-[50px] max-h-[50px] bg-white-bg w-full">
-        <span className="w-full h-full flex items-center justify-center text-[14px] text-gray-600 font-[300] Karla">Overview</span>
+      <section className="min-h-[50px] max-h-[50px] border-b-[1px]  border-gray-500 w-full">
+        <span className="w-full h-full flex items-center justify-center text-[16px] text-gray-600 font-[300] Karla">Overview</span>
       </section>
-      <div className="w-full h-[calc(100%-50px)] flex flex-col justify-between p-6">
-        <section className="flex-1 w-full h-full flex flex-col gap-8">
+      <div className="w-full h-[calc(100%-50px)] flex flex-col p-6">
+        <section className="flex flex-col gap-8 mt-8">
           <div className="w-full flex items-center gap-2">
             <img src={personalImages[0]} alt="img" className="w-[80px] h-[80px] rounded-full object-cover" />
             <div className="flex flex-col">
@@ -52,15 +51,15 @@ const Widget = () => {
           <p className="pWid text-gray-400  regular-16-karla-400 overflow-hidden text-ellipsis "> erferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferferferferferferferferferf erferfvv verferferferf erferf</p>
           <img src="./add-icon.png" alt="img1" className="w-[25px] -mt-[10px]" />
         </section>
-        <section className="flex-1 w-full h-full relative mt-6 max-h-[50%]">
-          <div className="flex flex-col gap-6 w-full h-full">
+        <section className="relative mt-6">
+          <div className="flex flex-col gap-6 w-full md:h-[70%] sm:h-[50%] h-[30%]">
             <div className="flexCenterBetween w-full transition-all duration-1000 overflow-hidden">
               <div className='navWd ' onClick={() => setChange("Services")}>Services</div>
               <div className='navWd' onClick={() => setChange("Packages")}>Packages</div>
               <div className='navWd borderWhite absolute top-[41px] w-full p-0'></div>
               <motion.div variants={change === "Services" ? variantsLeft : variantsRight} initial="moveFrom" animate="moveTo" className={`navWd borderBlackWd absolute top-[25px] w-[50%]`}></motion.div>
             </div>
-            <div className="overflow-auto w-full h-full ">
+            <div className="overflow-auto w-full  h-[50%]">
               {products?.map((product, i) => (
                 <Card key={i} data={product} />
               ))}
