@@ -2,8 +2,6 @@ import { FC, useEffect } from "react";
 import { dataUser } from "../../types"
 import { personalImages } from "../../data";
 
- 
-
 const InfoUser: FC<dataUser>= (data) => {
     let i:number = Math.floor(Math.random() * 6)
 
