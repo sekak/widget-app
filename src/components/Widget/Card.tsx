@@ -9,7 +9,7 @@ const Card: FC<dataProducts | any> = (data) => {
         <motion.div variants={cardVariants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true, amount: 1 }}
+            viewport={{ amount: 0.5 }}
             className='cursor-pointer '
         >
             <div className="px-3 py-3 flex relative rounded-lg border border-gray-300 m-1">

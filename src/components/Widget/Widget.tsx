@@ -52,9 +52,9 @@ const Widget = () => {
           {error ? <div>Somethig wrong!</div> : <InfoUser data={data} image={personalImages[randomImage]} />}
         </section>
         <section className="relative mt-6 h-full">
-          <div className="flexCenterBetween w-[90%] transition-all duration-700 overflow-hidden">
-            <div className='navWd mb-4' onClick={() => handleClick("Services")}>Services</div>
-            <div className='navWd mb-4' onClick={() => handleClick("Packages")}>Packages</div>
+          <div className="flexCenterBetween w-full transition-all duration-700 overflow-hidden">
+            <div className={`navWd mb-4 ${change !== "Services" && 'text-gray-500'}`} onClick={() => handleClick("Services")}>Services</div>
+            <div className={`navWd mb-4 ${change !== "Packages" && 'text-gray-500'}`} onClick={() => handleClick("Packages")}>Packages</div>
             <div className='navWd borderWhite absolute top-[36px] w-full p-0'></div>
             <motion.div variants={change === "Services" ? variantsLeft : variantsRight} initial="moveFrom" animate="moveTo" className={`navWd borderBlackWd absolute top-[20px] w-[50%] `}></motion.div>
           </div>
