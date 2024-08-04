@@ -27,7 +27,7 @@ body {
     border-bottom: .1px solid gray;
 }
 .borderBlackWd{
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(95, 95, 95);
 }
 .borderWhite
 {
