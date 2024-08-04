@@ -13,7 +13,7 @@ const Widget = () => {
   const [change, setChange] = useState<"Services" | "Packages">("Services")
   const [error, setError] = useState<boolean>(false)
   const [data, setData] = useState<dataUser | null>(null)
-  const [currentData, setCurrentData] = useState<dataProducts[] | null >(Services)
+  const [currentData, setCurrentData] = useState<dataProducts[] | null>(Services)
 
 
 
@@ -32,11 +32,10 @@ const Widget = () => {
   }, [])
 
   const handleClick = (type: string) => {
-    if(type === "Services")
-    {
+    if (type === "Services") {
       setChange("Services")
       setCurrentData(Services)
-    }else {
+    } else {
       setChange("Packages")
       setCurrentData(Packages)
     }
@@ -48,18 +47,18 @@ const Widget = () => {
         <span className="w-full h-full flex items-center justify-center text-[16px] text-gray-600 font-[400] Karla">Overview</span>
       </section>
       <div className="w-full flex flex-col p-6 h-full">
-        <section className="flex  flex-col  gap-4 sm:mt-4">
+        <section className="">
           {/* info user */}
-          {error ? <div>Somethig wrong!</div> : <InfoUser data={data} image={personalImages[randomImage]}/>}
+          {error ? <div>Somethig wrong!</div> : <InfoUser data={data} image={personalImages[randomImage]} />}
         </section>
-        <section className="relative mt-6  h-full">
+        <section className="relative mt-6 h-full">
+          <div className="flexCenterBetween w-[90%] transition-all duration-700 overflow-hidden">
+            <div className='navWd mb-4' onClick={() => handleClick("Services")}>Services</div>
+            <div className='navWd mb-4' onClick={() => handleClick("Packages")}>Packages</div>
+            <div className='navWd borderWhite absolute top-[36px] w-full p-0'></div>
+            <motion.div variants={change === "Services" ? variantsLeft : variantsRight} initial="moveFrom" animate="moveTo" className={`navWd borderBlackWd absolute top-[20px] w-[50%] `}></motion.div>
+          </div>
           <div className="flex flex-col gap-6 w-full h-full">
-            <div className="flexCenterBetween w-full transition-all duration-1000 overflow-hidden">
-              <div className='navWd' onClick={() => handleClick("Services")}>Services</div>
-              <div className='navWd' onClick={() => handleClick("Packages")}>Packages</div>
-              <div className='navWd borderWhite absolute top-[36px] w-full p-0'></div>
-              <motion.div variants={change === "Services" ? variantsLeft : variantsRight} initial="moveFrom" animate="moveTo" className={`navWd borderBlackWd absolute top-[20px] w-[50%] `}></motion.div>
-            </div>
             <div className="overflow-auto flex flex-col">
               {/* card */}
               {currentData?.map((item, i) => (
