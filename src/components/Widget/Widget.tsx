@@ -51,11 +51,11 @@ const Widget = () => {
           {/* info user */}
           {error ? <div>Somethig wrong!</div> : <InfoUser data={data} image={personalImages[randomImage]} />}
         </section>
-        <section className="relative mt-6 fixHeight">
-          <div className="flexCenterBetween w-full transition-all duration-700 overflow-hidden">
-            <div className={`navWd mb-4 border-b-2 transition-all duration-700 ${change !== "Services" ? 'text-gray-500' :'border-gray-800'}`} onClick={() => handleClick("Services")}>Services</div>
-            <div className={`navWd mb-4 border-b-2 transition-all duration-700 ${change !== "Packages" ? 'text-gray-500': 'border-gray-800'}`} onClick={() => handleClick("Packages")}>Packages</div>
+          <div className="flexCenterBetween w-full overflow-hidden">
+            <div className={`navWd mb-4 border-b-2 ${change !== "Services" ? 'text-gray-500' :'border-gray-800'}`} onClick={() => handleClick("Services")}>Services</div>
+            <div className={`navWd mb-4 border-b-2 ${change !== "Packages" ? 'text-gray-500': 'border-gray-800'}`} onClick={() => handleClick("Packages")}>Packages</div>
           </div>
+        <section className="relative mt-6 fixHeight">
           <div className="flex flex-col gap-6 w-full h-full">
             <div className="overflow-auto flex flex-col" >
               {/* card */}
