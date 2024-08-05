@@ -5,7 +5,7 @@ import Card from "./Card"
 import InfoUser from "./InfoUser"
 import { FetchData } from "../../Data/FetchData"
 import { dataProducts, dataUser } from "../../types"
-import { Packages, Services, personalImages } from "../../data"
+import {  Services, personalImages } from "../../data"
 
 const randomImage: number = Math.floor(Math.random() * 6);
 
@@ -13,7 +13,7 @@ const Widget = () => {
   const [change, setChange] = useState<"Services" | "Packages">("Services")
   const [error, setError] = useState<boolean>(false)
   const [data, setData] = useState<dataUser | null>(null)
-  const [currentData, setCurrentData] = useState<dataProducts[] | null>(Services)
+  // const [currentData, setCurrentData] = useState<dataProducts[] | null>(Services)
 
 
 
@@ -34,10 +34,8 @@ const Widget = () => {
   const handleClick = (type: string) => {
     if (type === "Services") {
       setChange("Services")
-      setCurrentData(Services)
     } else {
       setChange("Packages")
-      setCurrentData(Packages)
     }
   };
  
@@ -59,7 +57,7 @@ const Widget = () => {
           <div className="flex flex-col gap-6 w-full h-full">
             <div className="overflow-auto flex flex-col" >
               {/* card */}
-              {currentData?.map((item, i) => (
+              {Services?.filter((it)=> it.type === change).map((item, i) => (
                 <Card key={i} data={item}/>
               ))}
             </div>

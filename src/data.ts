@@ -17,6 +17,7 @@ export const Services: dataProducts[] = [
     description: 'A high-intensity workout combining boxing and martial arts techniques for fitness and self-defense.',
     imageURL: 'https://images.unsplash.com/photo-1486215397028-cb4f31efea3e?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: "Free",
+    type:"Services",
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ export const Services: dataProducts[] = [
     description: 'Guidance on nutrition and making healthy food choices to improve overall well-being.',
     imageURL: 'https://images.unsplash.com/photo-1696340030298-a7f877a7780c?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: "$100",
+    type:"Services",
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const Services: dataProducts[] = [
     description: 'A practice that combines physical postures, breathing exercises, and meditation for flexibility and relaxation.',
     imageURL: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=5120&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: "$100",
+    type:"Services",
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const Services: dataProducts[] = [
     description: 'A sport and exercise routine focusing on punching techniques, footwork, and conditioning.',
     imageURL: 'https://images.unsplash.com/photo-1517438322307-e67111335449?q=80&w=5071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: "Free",
+    type:"Services",
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ export const Services: dataProducts[] = [
     description: 'A low-impact exercise method focusing on core strength, flexibility, and body awareness.',
     imageURL: 'https://images.unsplash.com/photo-1690149907839-fe4d5a36bbbd?q=80&w=5069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: "$100",
+    type:"Services",
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const Services: dataProducts[] = [
     description: 'A practice of mindfulness and mental focus to achieve a state of calm and clarity.',
     imageURL: 'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?q=80&w=4806&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: "$100",
+    type:"Services",
   },
   {
     id: 7,
@@ -59,6 +65,7 @@ export const Services: dataProducts[] = [
     description: 'A high-intensity fitness program incorporating elements of weightlifting, cardio, and functional movements.',
     imageURL: 'https://images.unsplash.com/photo-1612957803626-1bf65224ff68?q=80&w=5070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: "$100",
+    type:"Services",
   },
   {
     id: 8,
@@ -66,6 +73,7 @@ export const Services: dataProducts[] = [
     description: 'A cardiovascular exercise involving continuous movement on foot, suitable for various fitness levels.',
     imageURL: 'https://images.unsplash.com/photo-1456613820599-bfe244172af5?q=80&w=3972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: "$100",
+    type:"Services",
   },
   {
     id: 9,
@@ -73,6 +81,7 @@ export const Services: dataProducts[] = [
     description: 'Exercises designed to improve muscular strength and endurance through resistance and weight training.',
     imageURL: 'https://images.unsplash.com/photo-1520787497953-1985ca467702?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: "$100",
+    type:"Services",
   },
   {
     id: 10,
@@ -80,52 +89,56 @@ export const Services: dataProducts[] = [
     description: 'A cardiovascular workout that combines kickboxing moves with high-intensity interval training for overall fitness.',
     imageURL: 'https://images.unsplash.com/photo-1518644961665-ed172691aaa1?q=80&w=5070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     price: "Free",
-  }
-];
-
-
-export const Packages: dataProducts[] = [
+    type:"Services",
+  },
   {
-    id: 1,
+    id: 11,
     name: "Yoga Mat",
     imageURL: "https://images.unsplash.com/photo-1599447421382-437e6fb32fb8?q=80&w=5070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "Free",
+    type:"Packages",
     description: "High-quality yoga mat with a non-slip surface for a comfortable and stable practice."
   },
   {
-    id: 2,
+    id: 12,
     name: "Fitness Tracker Watch",
     imageURL: "https://images.unsplash.com/photo-1654195131868-cac1d8429d86?q=80&w=4912&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "$199.99",
+    type:"Packages",
     description: "Advanced fitness tracker watch with heart rate monitoring, GPS, and activity tracking features."
   },
   {
-    id: 3,
+    id: 13,
     name: "Boxing Hand Wraps",
     imageURL: "https://images.unsplash.com/photo-1555661530-68c8e98db4e6?q=80&w=5070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "Free",
+    type:"Packages",
     description: "Essential hand wraps for boxing to provide extra support and protect your hands and wrists."
   },
   {
-    id: 4,
+    id: 14,
     name: "Kickboxing Gloves",
     imageURL: "https://images.unsplash.com/photo-1509255929945-586a420363cf?q=80&w=3921&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "$49.99",
+    type:"Packages",
     description: "Durable kickboxing gloves designed for comfort and protection during training and matches."
   },
   {
-    id: 5,
+    id: 15,
     name: "CrossFit Resistance Bands",
     imageURL: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?q=80&w=5070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "$34.99",
+    type:"Packages",
     description: "Versatile resistance bands ideal for CrossFit training, strength workouts, and rehabilitation exercises."
   },
   {
-    id: 6,
+    id: 16,
     name: "Healthy Protein Bar",
     imageURL: "https://plus.unsplash.com/premium_photo-1705256742034-02a944868632?q=80&w=5070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "Free",
+    type:"Packages",
     description: "Nutrient-packed protein bar made with natural ingredients to support a healthy diet and active lifestyle."
   },
-
 ];
+
+ 

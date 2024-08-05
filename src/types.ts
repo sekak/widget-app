@@ -61,5 +61,6 @@ export type dataProducts = {
     description: string;
     imageURL: string;
     price:string;
+    type:string
 }
  
