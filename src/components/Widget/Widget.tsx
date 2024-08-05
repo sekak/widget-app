@@ -53,10 +53,8 @@ const Widget = () => {
         </section>
         <section className="relative mt-6 fixHeight">
           <div className="flexCenterBetween w-full transition-all duration-700 overflow-hidden">
-            <div className={`navWd mb-4 ${change !== "Services" && 'text-gray-500'}`} onClick={() => handleClick("Services")}>Services</div>
-            <div className={`navWd mb-4 ${change !== "Packages" && 'text-gray-500'}`} onClick={() => handleClick("Packages")}>Packages</div>
-            <div className='navWd borderWhite absolute top-[36px] w-full p-0'></div>
-            <motion.div variants={change === "Services" ? variantsLeft : variantsRight} initial="moveFrom" animate="moveTo" className={`navWd borderBlackWd absolute top-[20px] w-[50%] `}></motion.div>
+            <div className={`navWd mb-4 border-b-2 transition-all duration-700 ${change !== "Services" ? 'text-gray-500' :'border-gray-800'}`} onClick={() => handleClick("Services")}>Services</div>
+            <div className={`navWd mb-4 border-b-2 transition-all duration-700 ${change !== "Packages" ? 'text-gray-500': 'border-gray-800'}`} onClick={() => handleClick("Packages")}>Packages</div>
           </div>
           <div className="flex flex-col gap-6 w-full h-full">
             <div className="overflow-auto flex flex-col" >
