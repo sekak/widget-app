@@ -40,27 +40,11 @@ const Widget = () => {
       setCurrentData(Packages)
     }
   };
-
-  const handleCloseButton=()=>{
-    let value = localStorage.getItem("isOpen")
-    if(!value)
-      localStorage.setItem("isOpen","false")
-    else if(value)
-    {
-      if(value === "false")
-        localStorage.setItem("isOpen","true")
-      else 
-        localStorage.setItem("isOpen","false")
-    }
-  }
-  
+ 
   return (
     <div className='h-full sm:w-[400px] w-[100%] fixed bottom-0 right-0 rounded-[25px] overflow-hidden z-50 flex flex-col shdow-widget'>
       <section className="min-h-[50px] max-h-[50px] border-b-[2px]  border-gray-300 w-full relative">
         <span className="w-full h-full flex items-center justify-center text-[16px] text-gray-600 font-[400] Karla">Overview</span>
-        <button className='absolute bg-red right-[15px] top-[30%] sm:hidden block' onClick={handleCloseButton}>
-          <img src='./close.png' className='w-[20px] h-[20px]' />
-        </button>
       </section>
       <div className="w-full flex flex-col p-6 h-full">
         <section className="h-[190px]">

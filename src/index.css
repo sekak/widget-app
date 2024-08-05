@@ -7,11 +7,9 @@ body {
     background-color: #f3f4ec;
     overflow-x: hidden;
 }
-
 * {
     box-sizing: border-box;
 }
-
 .Karla {
     font-family: 'Karla', sans-serif;
 }
@@ -19,7 +17,6 @@ body {
 .fixHeight {
     height: calc(100% - 320px);
 }
-
 .shdow-widget {
     background-color: white;
     border-radius: 16px;
@@ -28,81 +25,62 @@ body {
     -webkit-backdrop-filter: blur(19px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
-
 .borderBlackWd {
     border-bottom: 2px solid rgb(95, 95, 95);
 }
-
 .borderWhite {
     border-bottom: 2px solid rgb(226, 226, 226);
 }
-
 .pWid {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
 }
-
 .pWidCard {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
-
 .pTitleCard {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
 }
-
 .roundedWg {
     border-radius: 10px 0px 10px;
     border-top: 1px solid #bdbdbd88;
     border-left: 1px solid #bdbdbd88;
 }
-
 @layer components {
     .regular-14-karla {
         @apply text-[14px] Karla font-[300];
     }
-
     .regular-16-karla-400 {
         @apply text-[16px] Karla font-[400];
     }
-
     .regular-18-karla-500 {
         @apply text-[18px] Karla font-[500];
     }
-
     .flexCol {
         @apply flex flex-col
     }
-
     .flexCenter {
         @apply flex items-center
     }
-
     .flexCenterCenter {
         @apply flex items-center justify-center
     }
-
     .flexCenterBetween {
         @apply flex items-center justify-between
     }
-
     .navWd {
         @apply flex-1 flexCenterCenter p-2 regular-16-karla-400 cursor-pointer
     }
-
     .widget {
         @apply widBg fixed sm:w-[400px] h-[100%] sm:right-[50px] w-full bottom-0 rounded-[20px] overflow-hidden z-50
     }
 }
-
-
 ::-webkit-scrollbar {
-
     width: 6px;
     background-color: transparent;
 }
@@ -110,25 +88,8 @@ body {
 ::-webkit-scrollbar-thumb {
     background-color: rgb(91, 91, 91);
     border-radius: 10px;
-
 }
-
 ::-webkit-scrollbar-corner {
     background-color: rgb(236, 236, 236);
 }
-
-.animate{
-    animation: animate 1s ease-in-out;
-}
-
-@keyframes animate {
-    from {
-        margin-right: 100%;
-        width: 300%;
-      }
-    
-      to {
-        margin-right: 0%;
-        width: 100%;
-      }
-}
+ 
