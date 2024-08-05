@@ -1,15 +1,11 @@
 import React, { FC } from 'react'
 import { motion } from 'framer-motion'
-import { cardVariants } from '../../motion'
 import { dataProducts } from '../../types'
 
 
 const Card: FC<dataProducts | any> = (data) => {
     return (
-        <motion.div variants={cardVariants}
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{once:true, amount: 0.2 }}
+        <div 
             className='cursor-pointer'
         >
             <div className="px-3 py-3 flex relative rounded-lg border border-gray-300 m-1">
@@ -31,7 +27,7 @@ const Card: FC<dataProducts | any> = (data) => {
                     </div>
                 </div>
             </div>
-        </motion.div>
+        </div>
 
     )
 }

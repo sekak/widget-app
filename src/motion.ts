@@ -26,20 +26,6 @@ export const variantsRight: VariantLeftRight = {
     }
 }
 
-export const cardVariants = {
-    offscreen: {
-        opacity: 0,
-    },
-    onscreen: {
-        opacity: 1,
-        transition: {
-            type: 'spring',
-            bounce: 0.4,
-            duration: 0.8
-        }
-    }
-}
-
 export const variantsWidget = {
     open: {
         display: 'block',
