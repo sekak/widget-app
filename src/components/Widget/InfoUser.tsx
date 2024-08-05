@@ -1,9 +1,7 @@
 import { FC } from "react";
 import { dataUser } from "../../types"
-import { personalImages } from "../../data";
 
 const InfoUser:FC<dataUser | any>= (data) => {
-    console.log(data)
     return (
         <div className="flex flex-col gap-3">
          <div className="w-full flex items-center gap-2">

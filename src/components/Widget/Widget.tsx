@@ -41,17 +41,33 @@ const Widget = () => {
     }
   };
 
+  const handleCloseButton=()=>{
+    let value = localStorage.getItem("isOpen")
+    if(!value)
+      localStorage.setItem("isOpen","false")
+    else if(value)
+    {
+      if(value === "false")
+        localStorage.setItem("isOpen","true")
+      else 
+        localStorage.setItem("isOpen","false")
+    }
+  }
+  
   return (
     <div className='h-full sm:w-[400px] w-[100%] fixed bottom-0 right-0 rounded-[25px] overflow-hidden z-50 flex flex-col shdow-widget'>
-      <section className="min-h-[50px] max-h-[50px] border-b-[2px]  border-gray-300 w-full">
+      <section className="min-h-[50px] max-h-[50px] border-b-[2px]  border-gray-300 w-full relative">
         <span className="w-full h-full flex items-center justify-center text-[16px] text-gray-600 font-[400] Karla">Overview</span>
+        <button className='absolute bg-red right-[15px] top-[30%] sm:hidden block' onClick={handleCloseButton}>
+          <img src='./close.png' className='w-[20px] h-[20px]' />
+        </button>
       </section>
       <div className="w-full flex flex-col p-6 h-full">
-        <section className="">
+        <section className="h-[190px]">
           {/* info user */}
           {error ? <div>Somethig wrong!</div> : <InfoUser data={data} image={personalImages[randomImage]} />}
         </section>
-        <section className="relative mt-6 h-full">
+        <section className="relative mt-6 fixHeight">
           <div className="flexCenterBetween w-full transition-all duration-700 overflow-hidden">
             <div className={`navWd mb-4 ${change !== "Services" && 'text-gray-500'}`} onClick={() => handleClick("Services")}>Services</div>
             <div className={`navWd mb-4 ${change !== "Packages" && 'text-gray-500'}`} onClick={() => handleClick("Packages")}>Packages</div>
@@ -59,10 +75,10 @@ const Widget = () => {
             <motion.div variants={change === "Services" ? variantsLeft : variantsRight} initial="moveFrom" animate="moveTo" className={`navWd borderBlackWd absolute top-[20px] w-[50%] `}></motion.div>
           </div>
           <div className="flex flex-col gap-6 w-full h-full">
-            <div className="overflow-auto flex flex-col">
+            <div className="overflow-auto flex flex-col" >
               {/* card */}
               {currentData?.map((item, i) => (
-                <Card key={i} data={item} />
+                <Card key={i} data={item}/>
               ))}
             </div>
           </div>
